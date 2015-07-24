@@ -1,0 +1,114 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$nv-a-name: 'nv-a';
+$nv-a-x: 0px;
+$nv-a-y: 0px;
+$nv-a-offset-x: 0px;
+$nv-a-offset-y: 0px;
+$nv-a-width: 191px;
+$nv-a-height: 22px;
+$nv-a-total-width: 191px;
+$nv-a-total-height: 91px;
+$nv-a-image: '../img/sprite-nv.png';
+$nv-a: (0px, 0px, 0px, 0px, 191px, 22px, 191px, 91px, '../img/sprite-nv.png', 'nv-a', );
+$nv-b-name: 'nv-b';
+$nv-b-x: 0px;
+$nv-b-y: 73px;
+$nv-b-offset-x: 0px;
+$nv-b-offset-y: -73px;
+$nv-b-width: 100px;
+$nv-b-height: 18px;
+$nv-b-total-width: 191px;
+$nv-b-total-height: 91px;
+$nv-b-image: '../img/sprite-nv.png';
+$nv-b: (0px, 73px, 0px, -73px, 100px, 18px, 191px, 91px, '../img/sprite-nv.png', 'nv-b', );
+$nv-c-name: 'nv-c';
+$nv-c-x: 0px;
+$nv-c-y: 27px;
+$nv-c-offset-x: 0px;
+$nv-c-offset-y: -27px;
+$nv-c-width: 123px;
+$nv-c-height: 18px;
+$nv-c-total-width: 191px;
+$nv-c-total-height: 91px;
+$nv-c-image: '../img/sprite-nv.png';
+$nv-c: (0px, 27px, 0px, -27px, 123px, 18px, 191px, 91px, '../img/sprite-nv.png', 'nv-c', );
+$nv-d-name: 'nv-d';
+$nv-d-x: 0px;
+$nv-d-y: 50px;
+$nv-d-offset-x: 0px;
+$nv-d-offset-y: -50px;
+$nv-d-width: 123px;
+$nv-d-height: 18px;
+$nv-d-total-width: 191px;
+$nv-d-total-height: 91px;
+$nv-d-image: '../img/sprite-nv.png';
+$nv-d: (0px, 50px, 0px, -50px, 123px, 18px, 191px, 91px, '../img/sprite-nv.png', 'nv-d', );
+$spritesheet-width: 191px;
+$spritesheet-height: 91px;
+$spritesheet-image: '../img/sprite-nv.png';
+$spritesheet-sprites: ($nv-a, $nv-b, $nv-c, $nv-d, );
+$spritesheet: (191px, 91px, '../img/sprite-nv.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

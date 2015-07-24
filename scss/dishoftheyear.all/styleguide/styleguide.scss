@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+// スタイルガイドに出力するHTMLを定義する為のファイル
+/*
+
+
+## .navi--head
+
+#### 共通ヘッダナビゲーション
+
+```
+<div class="l-navi navi--head">
+    <ul>
+        <li class="navi__item01"><a href="../" title="今年の一皿 2014"><span></span></a></li>
+        <li class="navi__item02"><a class="current" href="report.html" title="発表会の様子"><i></i><span></span></a></li>
+        <li class="navi__item03"><a href="unagi.html" title="「うなぎ」レポート"><i></i><span></span></a></li>
+        <li class="navi__item04"><a href="shavedice.html" title="「かき氷」レポート"><i></i><span></span></a></li>
+    </ul>
+</div>
+```
+
+
+## .navi--foot
+
+#### 共通フッターナビゲーション
+
+```
+<div class="l-navi navi--foot">
+    <ul>
+        <li><a href="http://gri.gnavi.co.jp/contact/">お問い合わせ</a></li>
+        <li><a href="http://gri.gnavi.co.jp/sitemap/">サイトマップ</a></li>
+        <li><a href="http://gri.gnavi.co.jp/agreement/">利用規約</a></li>
+        <li><a href="http://gri.gnavi.co.jp/webuse/">利用条件</a></li>
+        <li><a href="http://gri.gnavi.co.jp/policy/">プライバシーポリシー</a></li>
+    </ul>
+</div>
+```
+
+
+## .h1-rep
+
+#### h1 見出し 発表会の様子
+
+```
+<h1 class="l-h h1-rep" title="今年の一皿 2014　発表会の様子"></h1>
+```
+
+
+## .link-home
+
+#### フッター トップもどるナビ
+
+```
+<div class="link-home">
+    <a href="../" title="今年の一皿 dish of the year back to HOME"></a>
+</div>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+// l-body
+.l-body {
+    background: url(../img/bg.png) repeat-x center 0;
+}
+
+// l-wrapper
+.l-wrapper {
+    margin: 0 auto;
+    width: $WIDTH_WRAPPER;
+}
+
+// l-h
+.l-h {
+    display: block;
+    font-weight: normal;
+}
+
+// l-navi
+.l-navi {
+    ul {
+        font-size: 0;
+    }
+    li {
+        display: inline-block;
+        *display:inline;
+        *zoom:1;
+        vertical-align: top;
+        font-size: 1;
+    }
+    a {
+        display: block;
+    }
+}
+
+// l-grid
+.l-grid {
+    font-size: 0;
+    
+    & > li {
+        display: inline-block;
+        *display:inline;
+        *zoom:1;
+        vertical-align: top;
+        font-size: $FONT_SIZE_M;
+    }
+}
+
+// l-media
+.l-media {
+    .md-imgL {
+        float: left;
+        display: block;
+    }
+    .md-imgR {
+        float: right;
+        display: block;
+    }
+    .md-bd {
+        overflow: hidden;
+    }
+}
+
+
+
+
+
+
+
+

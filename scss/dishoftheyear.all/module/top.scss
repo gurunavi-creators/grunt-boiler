@@ -1,0 +1,295 @@
+@charset "utf-8";
+
+// h1
+.h1 {
+    margin: 130px auto 0;
+    
+    // sprite
+    @include sprite($top_sti-a);
+}
+
+// ttl-vertical
+.ttl-vertical {
+    margin: -240px auto 100px;
+    height: 282px;
+    background: url(../img/h1-text.png) no-repeat center 0;
+}
+
+// h2
+.h2 {
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+    // sprite
+    @include sprite($top_sti-b);
+}
+
+.h2-topic {
+    margin: 0 auto 35px;
+}
+
+.topic__stuff .h2-topic {
+    // sprite
+    @include sprite($top_sti-c);
+}
+
+.topic__trend .h2-topic {
+    // sprite
+    @include sprite($top_sti-d);
+}
+
+.h2-fullwidth {
+    margin: 0 0 40px;
+    padding-top: 40px;
+    border-top: 1px dotted $CLR_BG_REVERSE;
+    
+    & > span {
+        display: block;
+        margin: auto;
+    }
+}
+.h2-select > span {
+    // sprite
+    @include sprite($top_sti-g);
+}
+.h2-judge > span {
+    // sprite
+    @include sprite($top_sti-h);
+}
+
+// h3
+.h3-topic {
+    margin: 0 auto 25px;
+}
+
+.topic__stuff .h3-topic {
+    // sprite
+    @include sprite($top_sti-e);
+}
+
+.topic__trend .h3-topic {
+    // sprite
+    @include sprite($top_sti-f);
+}
+
+// h4
+.h4-topic {
+    margin-bottom: 20px;
+    font-size: $FONT_SIZE_L;
+    line-height: $LINE_HEIGHT_NONE;
+}
+
+// slide
+// animation variable
+//property
+$ANIM_SLIDE_PROP: opacity;
+//duration
+$ANIM_SLIDE_DUR: 3s;
+//timing-function
+$ANIM_SLIDE_TIME: cubic-bezier(.8,0,.2,.7);
+
+.slide {
+    position: relative;
+    margin: -95px 0 40px;
+    width: 960px;
+    height: 557px;
+    
+    & > img {
+        position: absolute;
+        display: block;
+        top: 0;
+    }
+    
+    // 料理画像を長めにフェードインアニメーション
+    .slide-animation {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        
+        // animation
+        transition-property: $ANIM_SLIDE_PROP;
+        transition-duration : $ANIM_SLIDE_DUR;
+        transition-timing-function: $ANIM_SLIDE_TIME;
+    }
+}
+
+// description
+.description {
+    margin: 0 auto 50px;
+    width: $WIDTH_CONTENT;
+    
+    .h3 {
+        margin-bottom: 15px;
+        font-size: $FONT_SIZE_L;
+        line-height: $LINE_HEIGHT_NONE;
+    }
+    
+    .text {
+        margin-bottom: 5px;
+        line-height: $LINE_HEIGHT_L;
+    }
+}
+
+// topic
+.topic {
+    margin: 0 auto 60px;
+    width: $WIDTH_CONTENT;
+    
+    & > ul {
+        margin-left: -80px;
+        
+        & > li {
+            margin-left: 80px;
+            width: 400px;
+        }
+    }
+    
+    .img {
+        margin-bottom: 20px;
+    }
+    
+    .txt {
+        margin-bottom: 35px;
+        line-height: $LINE_HEIGHT_L;
+    }
+}
+
+// link-btn
+// animation variable
+//property
+$ANIM_LINFADE_PROP: background-color;
+//duration
+$ANIM_LINFADE_DUR: .4s;
+//timing-function
+$ANIM_LINFADE_TIME: ease-in;
+
+.link-btn {
+    padding-top: 4px;
+    width: 400px;
+    background: url(../img/topic_bd.png) no-repeat 0 0;
+
+    & > a {
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        height: 56px;
+        background-color: transparent;
+        
+        // animation
+        transition-property: $ANIM_LINFADE_PROP;
+        transition-duration : $ANIM_LINFADE_DUR;
+        transition-timing-function: $ANIM_LINFADE_TIME;
+
+        &:active,
+        &:hover {
+            background-color: #fdf7e3;
+        }
+        
+        & > i {
+            position: absolute;
+            display: block;
+            top: 44%;
+            left: 124px;
+            width: 8px;
+            height: 8px;
+            background: url(../img/icn_arr.png) no-repeat 0 0;
+        }
+        
+        & > span {
+            position: absolute;
+            display: block;
+            margin:0 auto;
+            top: 35%;
+            left: 153px;
+        }
+    }
+}
+.topic__stuff .link-btn > a > span {
+    // sprite
+    @include sprite($nv-c);
+}
+.topic__trend .link-btn > a > span {
+    // sprite
+    @include sprite($nv-d);
+}
+.link-btn--report {
+    margin: 0 auto 65px;
+    width: 400px;
+    
+    & > a > i {
+        left: 137px;
+    }
+    
+    & > a > span {
+        left: 164px;
+        
+        // sprite
+        @include sprite($nv-b);
+    }
+}
+
+// img-select
+.img-select {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+// select-explain
+.select-explain {
+    margin: 0 auto 30px;
+    width: $WIDTH_CONTENT;
+    
+    & > ul {
+        margin-left: -30px;
+        
+        & > li {
+            margin-left: 30px;
+        }
+    }
+    
+    .select__txt {
+        width: 430px;
+        line-height: $LINE_HEIGHT_L;
+    }
+    
+    .select__list {
+        padding: 16px 20px 13px;
+        width: 380px;
+        background-color: $CLR_BG_REVERSE;
+        color: $CLR_TXT_REVERSE;
+        
+        & > p {
+            margin-bottom: 2px;
+        }
+        
+        & > ul > li {
+            margin-bottom: 2px;
+        }
+    }
+    
+}
+
+// judge-list
+.judge-list {
+    margin: 0 auto 10px;
+    width: $WIDTH_CONTENT;
+    
+    & > ul {
+        margin-left: -40px;
+        
+        & > li {
+            margin: 0 0 19px 40px;
+            width: 420px;
+        }
+        & > .left {
+            text-align: right;
+        }
+    }
+}
+
+// judge-txt
+.judge-txt {
+    margin: 0 auto 80px;
+    width: $WIDTH_CONTENT;
+    text-align: center;
+}
+
