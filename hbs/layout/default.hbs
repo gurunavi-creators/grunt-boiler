@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="author" content="{{copyright}}">
+  <meta name="description" content="{{description}}">
+  <meta name="keywords" content="{{keywords}}">
+  <!--ogp-->
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{location}}">
+  <meta property="og:image" content="{{og_img}}">
+  <meta property="og:site_name" content="{{og_title}}">
+  <meta property="og:locale" content="ja_JP ">
+  <meta property="fb:admins" content="{{fb_admins}}">
+  <meta property="fb:app_id" content="{{fb_app_id}}">
+  <!--/ogp-->
+  <link rel="canonical" href="{{canonical}}">
+  <!--css-->
+  <link rel="stylesheet" href="css/all.css">
+  <!--/css-->
+</head>
+<body>
+
+  <h1>{{h1}}</h1>
+
+  <h2>{{h2}}</h2>
+
+  <h3>{{h3}}</h3>
+  
+  {{# if header }}
+  <header>{{header}}</header>
+  {{/ if }}
+
+  {{# if footer }}
+  <footer>{{footer}}</footer>
+  {{/ if }}
+
+  <!--JS-->
+  <script src="js/lib.js"></script>
+  <script src="js/all.js"></script>
+  <!--/JS-->
+</body>
+</html>

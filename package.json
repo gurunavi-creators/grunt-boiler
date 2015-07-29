@@ -1,7 +1,7 @@
 {
-  "name": "dishoftheyear",
+  "name": "grunt-boiler",
   "version": "1.0.0",
-  "description": "dishoftheyear",
+  "description": "grunt-boiler",
   "main": "index",
   "scripts": {
     "build": "grunt build",
@@ -11,10 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-assemble": "^0.4.0",
     "grunt-autoprefixer": "^3.0.0",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.13.0",
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-uglify": "^0.5.1",
@@ -22,10 +24,19 @@
     "grunt-csscomb": "^3.0.0",
     "grunt-csso": "^0.6.3",
     "grunt-spritesmith": "^4.5.2",
-    "grunt-styledocco": "^0.2.1"
+    "grunt-styledocco": "^0.2.1",
+    "jit-grunt": "^0.9.1",
+    "time-grunt": "^1.2.1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:sekiyaeiji/grunt-boiler.git"
-  }
+    "url": "git+ssh://git@github.com/sekiyaeiji/grunt-boiler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sekiyaeiji/grunt-boiler/issues"
+  },
+  "homepage": "https://github.com/sekiyaeiji/grunt-boiler#readme",
+  "keywords": [
+    "grunt-boiler"
+  ]
 }
