@@ -175,7 +175,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build:html', ['assemble']);
   grunt.registerTask('build:css', ['sass', 'autoprefixer', 'csscomb', 'csso']);
   grunt.registerTask('build:js', ['copy', 'concat', 'uglify']);
-  grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
+  grunt.registerTask('build', [/*'build:html', */'build:css', 'build:js']);
   grunt.registerTask('test', ['jshint']);
   grunt.registerTask('styleguide', ['build', 'styledocco']);
   grunt.registerTask('default', 'build');
