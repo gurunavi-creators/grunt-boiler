@@ -11,6 +11,10 @@
  * 
  * $ grunt watch
  * 
+ * ** testコマンド
+ * 
+ * $ grunt test
+ * 
  * ---------------------------------------------------------------------- */
 
 module.exports = function (grunt) {
@@ -18,6 +22,9 @@ module.exports = function (grunt) {
   // manage
   require('time-grunt')(grunt);
   require('jit-grunt')(grunt);
+
+  // sprite
+  grunt.loadNpmTasks('grunt-spritesmith');
   
   
   // process
@@ -126,11 +133,11 @@ module.exports = function (grunt) {
     assemble: {
       options: {
         partials: ['<%= path.html_src %>include/**/*.hbs'],
-        layout: ['<%= path.html_src %>layout/**/*.hbs'],
+        layout: ['<%= path.html_src %>layout/default.hbs'],
         data: ['<%= path.html_src %>data/*.json']
       },
       site: {
-        src: ['<%= path.src %>*.hbs'],
+        src: ['<%= path.src %>*.html'],
         dest: './'
       }
     },
@@ -154,7 +161,7 @@ module.exports = function (grunt) {
     },
 
     jshint: {
-      all: ['<%= path.js_src %>**/*.js']
+      all: ['Gruntfile.js', '<%= path.js_src %>all/*.js']
     },
 
   });
@@ -163,9 +170,8 @@ module.exports = function (grunt) {
   grunt.registerTask('build:html', ['assemble']);
   grunt.registerTask('build:css', ['sass', 'autoprefixer', 'csscomb', 'csso']);
   grunt.registerTask('build:js', ['copy', 'concat', 'uglify']);
-  grunt.registerTask('build', ['build:css', 'build:js']);
+  grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
   grunt.registerTask('test', ['jshint']);
   grunt.registerTask('styleguide', ['build', 'styledocco']);
-  grunt.registerTask('sprites', ['sprite']);
   grunt.registerTask('default', 'build');
 };
