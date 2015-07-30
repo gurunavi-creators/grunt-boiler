@@ -21,10 +21,8 @@ module.exports = function (grunt) {
 
   // manage
   require('time-grunt')(grunt);
-  require('jit-grunt')(grunt);
-
-  // sprite
   require('jit-grunt')(grunt, {
+    // sprite
     sprite: 'grunt-spritesmith'
   });
 
