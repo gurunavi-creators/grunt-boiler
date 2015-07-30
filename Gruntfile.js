@@ -18,18 +18,20 @@
  * ---------------------------------------------------------------------- */
 
 module.exports = function (grunt) {
-  
+
   // manage
   require('time-grunt')(grunt);
   require('jit-grunt')(grunt);
 
   // sprite
-  grunt.loadNpmTasks('grunt-spritesmith');
-  
-  
+  require('jit-grunt')(grunt, {
+    sprite: 'grunt-spritesmith'
+  });
+
+
   // process
   grunt.initConfig({
-  
+
     path: {
       src: 'src/',
       tmp: 'tmp/',
@@ -38,7 +40,7 @@ module.exports = function (grunt) {
       js_src: 'js/',
       sprite_src: 'sprite/'
     },
-    
+
     pkg: grunt.file.readJSON('package.json'),
 
     sprite: {
@@ -129,7 +131,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    
+
     assemble: {
       options: {
         partials: ['<%= path.html_src %>include/**/*.hbs'],
@@ -165,8 +167,8 @@ module.exports = function (grunt) {
     },
 
   });
-  
-  
+
+
   grunt.registerTask('build:html', ['assemble']);
   grunt.registerTask('build:css', ['sass', 'autoprefixer', 'csscomb', 'csso']);
   grunt.registerTask('build:js', ['copy', 'concat', 'uglify']);
