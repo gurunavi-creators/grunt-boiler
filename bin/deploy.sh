@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 変数
-SYMBOLIC_LINK=/home/node_package/dishoftheyear/node_modules
-REMOTE_PATH=fileup01:/home/nfs/gri/docroot/dishoftheyear/
-LOCAL_PATH=${WORKSPACE}/_src/
-BACKUP_PATH=${WORKSPACE}/_backup/
+SYMBOLIC_LINK=/home/node_package/sample/node_modules
+REMOTE_PATH=fileup01:/home/nfs/gri/docroot/sample/
+LOCAL_PATH=${WORKSPACE}/src/
+BACKUP_PATH=${WORKSPACE}/backup/
 
 
 # コマンド
