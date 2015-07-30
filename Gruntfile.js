@@ -34,19 +34,22 @@ module.exports = function (grunt) {
 
     path: {
       src: 'src/',
+      dist: 'dist/',
       tmp: 'tmp/',
-      html_src: 'hbs/',
-      scss_src: 'scss/',
-      js_src: 'js/',
-      sprite_src: 'sprite/'
+      html_src: 'src/hbs/',
+      scss_src: 'src/scss/',
+      js_src: 'src/js/',
+      sprite_src: 'src/sprite/'
     },
 
     pkg: grunt.file.readJSON('package.json'),
+    
+    clean: ['<%= path.tmp %>', '<%= path.dist %>'],
 
     sprite: {
       sample: {
         src: '<%= path.sprite_src %>sprite-sample/*.png',
-        dest: '<%= path.src %>img/sprite-sample.png',
+        dest: '<%= path.dist %>img/sprite-sample.png',
         imgPath: '../img/sprite-sample.png',
         destCss: '<%= path.scss_src %>all/module/sprite-sample.scss',
         padding: 5
@@ -90,7 +93,7 @@ module.exports = function (grunt) {
           restructure: false
         },
         files: {
-          'src/css/all.css': '<%= path.tmp %>css/all.css'
+          '<%= path.dist %>css/all.css': '<%= path.tmp %>css/all.css'
         }
       }
     },
@@ -102,7 +105,7 @@ module.exports = function (grunt) {
             expand: true,
             cwd: '<%= path.js_src %>',
             src: ['lib.js'],
-            dest: '<%= path.src %>js'
+            dest: '<%= path.dist %>js'
           }
         ]
       }
@@ -127,7 +130,7 @@ module.exports = function (grunt) {
       },
       app: {
         files: {
-          '<%= path.src %>js/all.js': '<%= path.tmp %>js/all.js'
+          '<%= path.dist %>js/all.js': '<%= path.tmp %>js/all.js'
         }
       }
     },
@@ -139,7 +142,7 @@ module.exports = function (grunt) {
         data: ['<%= path.html_src %>data/*.json']
       },
       site: {
-        src: ['<%= path.src %>*.html'],
+        src: ['<%= path.dist %>*.html'],
         dest: './'
       }
     },

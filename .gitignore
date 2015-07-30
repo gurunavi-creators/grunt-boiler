@@ -17,7 +17,7 @@ $RECYCLE.BIN/
 build/
 dist/
 
-src/
+dist/
 tmp/
 
 
