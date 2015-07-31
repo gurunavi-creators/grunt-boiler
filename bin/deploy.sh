@@ -2,10 +2,10 @@
 
 # 変数
 SYMBOLIC_LINK=/home/node_package/sample/node_modules
-REMOTE_HOST_DEV=dev-www001
-REMOTE_HOST_STG=test-fileup01
-REMOTE_HOST_PRD=fileup01
-REMOTE_PATH=/home/nfs/gri/docroot/sample/
+REMOTE_HOST_DEV=
+REMOTE_HOST_STG=
+REMOTE_HOST_PRD=
+REMOTE_PATH=/sample/
 LOCAL_PATH=${WORKSPACE}/dist/
 SRC_PATH=${WORKSPACE}/src/
 BACKUP_PATH=${WORKSPACE}/backup/
