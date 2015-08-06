@@ -5,7 +5,8 @@
   "main": "index",
   "scripts": {
     "build": "grunt build",
-    "test": "grunt test"
+    "test": "grunt test",
+    "stats": "./node_modules/stylestats/bin/cli.js dist/css/*.css -f csv > stats.csv"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "grunt-spritesmith": "^4.5.2",
     "grunt-styledocco": "^0.2.1",
     "jit-grunt": "^0.9.1",
+    "stylestats": "^5.4.2",
     "time-grunt": "^1.2.1"
   },
   "repository": {
