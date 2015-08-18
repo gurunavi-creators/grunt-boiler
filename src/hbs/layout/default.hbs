@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     <title>{{title}}</title>
-    <meta name="author" content="{{copyright}}">
-    <meta name="description" content="{{description}}">
-    <meta name="keywords" content="{{keywords}}">
+    <meta name="author" content="{{default.copyright}}">
+    <meta name="description" content="{{default.description}}">
+    <meta name="keywords" content="{{default.keywords}}">
     <!--ogp-->
-    <meta property="og:title" content="{{title}}">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="{{description}}">
-    <meta property="og:url" content="{{location}}">
-    <meta property="og:image" content="{{og_img}}">
-    <meta property="og:site_name" content="{{og_title}}">
-    <meta property="og:locale" content="ja_JP ">
-    <meta property="fb:admins" content="{{fb_admins}}">
-    <meta property="fb:app_id" content="{{fb_app_id}}">
+    <meta property="og:title" content="{{default.title}}">
+    <meta property="og:type" content="{{default.og_type}}">
+    <meta property="og:description" content="{{default.description}}">
+    <meta property="og:url" content="{{default.location}}">
+    <meta property="og:image" content="{{default.og_img}}">
+    <meta property="og:site_name" content="{{default.og_title}}">
+    <meta property="og:locale" content="{{default.og_locale}} ">
+    <meta property="fb:admins" content="{{default.fb_admins}}">
+    <meta property="fb:app_id" content="{{default.fb_app_id}}">
     <!--/ogp-->
-    <link rel="canonical" href="{{canonical}}">
+    <link rel="canonical" href="{{default.canonical}}">
     <!--css-->
     <link rel="stylesheet" href="css/all.css">
     <!--/css-->
@@ -29,9 +29,11 @@
     
     {{> nav}}
     
-    <h1>{{h1}}</h1>
-    <h2>{{h2}}</h2>
-    <h3>{{h3}}</h3>
+    <h1>{{default.h1}}</h1>
+    <h2>{{default.h2}}</h2>
+    <h3>{{default.h3}}</h3>
+    {{> body }}
+    
     {{#if isFooter}}
     {{> footer}}
     {{/if}}

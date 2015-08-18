@@ -151,18 +151,18 @@ module.exports = function (grunt) {
 
         watch: {
             css: {
-                files: ['**/*.scss'],
+                files: ['src/**/*.scss'],
                 tasks: ['build:css'],
                 options: {
                     livereload: true
                 }
             },
             js: {
-                files: ['**/*.js'],
+                files: ['src/**/*.js'],
                 tasks: ['build:js']
             },
             html: {
-                files: ['**/*.hbs'],
+                files: ['src/**/*.hbs', 'src/**/*.json'],
                 tasks: ['build:html']
             },
             options: {
@@ -180,7 +180,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build:html', ['assemble']);
     grunt.registerTask('build:css', ['sass', 'autoprefixer', 'csscomb', 'csso']);
     grunt.registerTask('build:js', ['copy', 'concat', 'uglify']);
-    grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
+    grunt.registerTask('build', ['clean', 'build:html', 'build:css', 'build:js']);
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('styleguide', ['build', 'styledocco']);
     grunt.registerTask('default', 'build');
