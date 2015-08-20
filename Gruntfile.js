@@ -110,6 +110,20 @@ module.exports = function (grunt) {
         },
 
         concat: {
+            options: {
+                banner : [
+                    '(function(WIN, $, PROJECTNAMESPACE){',
+                    "  'use strict';",
+                    '  PROJECTNAMESPACE = PROJECTNAMESPACE || {};',
+                    '',
+                    ''
+                ].join('\n'),
+                footer : [
+                    '',
+                    '',
+                    '})(window, window.jQuery, window.PROJECTNAMESPACE);'
+                ].join('\n')
+            },
             all: {
                 src: [
           '<%= path.js_src %>all/utility.js',

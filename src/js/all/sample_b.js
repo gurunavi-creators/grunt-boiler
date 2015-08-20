@@ -3,24 +3,21 @@
  * all.js - sample_b.js
  * Author: sekiya
  * ---------------------------------------------------------------------- */
-(function (WIN) {
-  'use strict';
-
-  // run
-  $(function () {
+// run
+$(function () {
     sampleB.init();
     sampleFunction2();
-  });
+});
 
-  // sample B module
-  var  sampleB = {
+// sample B module
+var sampleB = {
     init: function () {
-      WIN.Utility.console('B');
+        PROJECTNAMESPACE.Utility.console('B');
     }
-  };
+};
 
-  // sample function
-  var  sampleFunction2 = function () {
+// sample function
+var sampleFunction2 = function () {
     var hoge1 = 1;
     var huga1 = 2;
 
@@ -50,6 +47,4 @@
 
     var hoge10 = 1;
     var huga10 = 2;
-  };
-
-})(window);
+};
