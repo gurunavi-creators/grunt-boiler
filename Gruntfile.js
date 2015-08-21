@@ -19,6 +19,10 @@
  * 
  * $ grunt test
  * 
+ * ** dist、tmp削除コマンド
+ * 
+ * $ grunt clean
+ * 
  * ---------------------------------------------------------------------- */
 
 module.exports = function (grunt) {
@@ -108,8 +112,8 @@ module.exports = function (grunt) {
                         cwd: '<%= path.js_src %>',
                         src: ['lib.js'],
                         dest: '<%= path.dist %>js'
-          }
-        ]
+                    }
+                ]
             }
         },
 
@@ -130,10 +134,10 @@ module.exports = function (grunt) {
             },
             all: {
                 src: [
-          '<%= path.js_src %>all/utility.js',
-          '<%= path.js_src %>all/sample_a.js',
-          '<%= path.js_src %>all/sample_b.js'
-        ],
+                    '<%= path.js_src %>all/utility.js',
+                    '<%= path.js_src %>all/sample_a.js',
+                    '<%= path.js_src %>all/sample_b.js'
+                ],
                 dest: '<%= path.tmp %>js/all.js'
             }
         },
@@ -157,6 +161,9 @@ module.exports = function (grunt) {
                 layoutdir: '<%= path.html_src %>layout/',
                 partials: '<%= path.html_src %>include/*.hbs',
                 pkg: '<%= pkg %>',
+                helpers: [
+                    'handlebars-helper-minify'
+                ],
                 assets: '',
                 minify: {
                     removeComments: true
@@ -198,10 +205,10 @@ module.exports = function (grunt) {
     });
 
 
-    grunt.registerTask('build:html', ['assemble']);
     grunt.registerTask('build:css', ['sass', 'autoprefixer', 'csscomb', 'csso']);
     grunt.registerTask('build:js', ['copy', 'concat', 'uglify']);
-    grunt.registerTask('build', ['clean', 'build:html', 'build:css', 'build:js']);
+    grunt.registerTask('build:html', ['assemble']);
+    grunt.registerTask('build', ['build:css', 'build:js', 'build:html']);
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('styleguide', ['build', 'styledocco']);
     grunt.registerTask('default', 'build');
