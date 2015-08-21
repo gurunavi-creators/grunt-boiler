@@ -11,7 +11,11 @@
  * 
  * $ grunt watch
  * 
- * ** testコマンド
+ * ** spriteコマンド
+ * 
+ * $ grunt sprite
+ * 
+ * ** jshintコマンド
  * 
  * $ grunt test
  * 
@@ -111,17 +115,17 @@ module.exports = function (grunt) {
 
         concat: {
             options: {
-                banner : [
+                banner: [
                     '(function(WIN, $, PROJECTNAMESPACE){',
                     "  'use strict';",
                     '  PROJECTNAMESPACE = PROJECTNAMESPACE || {};',
                     '',
                     ''
                 ].join('\n'),
-                footer : [
+                footer: [
                     '',
                     '',
-                    '})(window, window.jQuery, window.PROJECTNAMESPACE);'
+                    '})(window, jQuery, window.PROJECTNAMESPACE);'
                 ].join('\n')
             },
             all: {
@@ -153,7 +157,10 @@ module.exports = function (grunt) {
                 layoutdir: '<%= path.html_src %>layout/',
                 partials: '<%= path.html_src %>include/*.hbs',
                 pkg: '<%= pkg %>',
-                assets: ''
+                assets: '',
+                minify: {
+                    removeComments: true
+                }
             },
             files: {
                 expand: true,
