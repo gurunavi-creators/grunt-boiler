@@ -10,13 +10,13 @@ LOCAL_PATH=${WORKSPACE}/dist/
 SRC_PATH=${WORKSPACE}/src/
 BACKUP_PATH=${WORKSPACE}/backup/
 
-if [ ${TARGET} -eq dev ] ; then
+if [ "${TARGET}" = "dev" ] ; then
     # dev
     REMOTE_HOST=$REMOTE_HOST_DEV
-elif [ ${TARGET} -eq stg ] ; then
+elif [ "${TARGET}" = "stg" ] ; then
     # stg
     REMOTE_HOST=$REMOTE_HOST_STG
-elif [ ${TARGET} -eq prd ] ; then
+elif [ "${TARGET}" = "prd" ] ; then
     # prd
     REMOTE_HOST=$REMOTE_HOST_PRD
 else

@@ -202,6 +202,13 @@ module.exports = function (grunt) {
             all: ['Gruntfile.js', '<%= path.js_src %>all/*.js']
         },
 
+        eslint: {
+            options: {},
+            target: [
+                '<%= path.js_src %>all/*.js'
+            ]
+        },
+
     });
 
 
@@ -209,7 +216,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build:js', ['copy', 'concat', 'uglify']);
     grunt.registerTask('build:html', ['assemble']);
     grunt.registerTask('build', ['build:css', 'build:js', 'build:html']);
-    grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('test', ['jshint', 'eslint']);
     grunt.registerTask('styleguide', ['build', 'styledocco']);
     grunt.registerTask('default', 'build');
 };
