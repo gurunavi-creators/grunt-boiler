@@ -5,8 +5,6 @@
 
 ## install
 
----
-
     // install
     npm install
     // sprite
@@ -17,35 +15,25 @@
 
 ## build command
 
----
-
     grunt
 
 
 ## watch command
-
----
 
     grunt watch
 
 
 ## sprite command
 
----
-
     grunt sprite
 
 
 ## es-lint, jshint command
 
----
-
     grunt test
 
 
 ## dist、tmp clean command
-
----
 
     grunt clean
 
