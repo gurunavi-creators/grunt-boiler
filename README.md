@@ -38,7 +38,7 @@
     grunt test
 
 
-## dist、tmp clean command
+## clean dist/、tmp/ command
 
     grunt clean
 
