@@ -5,11 +5,16 @@
 
 ## install
 
-    // install
+### install
+
     npm install
-    // sprite
+
+### sprite
+
     grunt sprite
-    // build
+
+### build
+
     grunt
 
 
@@ -50,6 +55,7 @@
 - "grunt-autoprefixer": "^3.0.0",
 - "grunt-cli": "^0.1.13",
 - "grunt-contrib-clean": "^0.6.0",
+- "grunt-contrib-compass": "^1.0.4",
 - "grunt-contrib-concat": "^0.5.0",
 - "grunt-contrib-copy": "^0.8.0",
 - "grunt-contrib-cssmin": "^0.13.0",
